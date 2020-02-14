@@ -230,7 +230,29 @@ myCar.drive();
 // 2. How could we represent varying hunger levels based on activity?
 // 3. How about when it eats?
 class Animal {
+    constructor(hunger) {
+        this.hunger = hunger;
+    }
+    activity = () => {
+        this.hunger = this.hunger + 10; 
+    }
+    eat = () => {
+        this.hunger = this.hunger - 10; 
+    }
 
+}
+
+CLASS EXAMPLE: 
+
+class Animal {
+    constructor(name, hungerLevel) {
+        this.name = name;
+        this.hungerLv1 = hungerLevel; 
+
+    }
+    play = () => {
+        this.hungerLv1 += 20; 
+    }
 }
 
 ```
