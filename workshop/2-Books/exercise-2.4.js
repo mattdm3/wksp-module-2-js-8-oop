@@ -1,6 +1,62 @@
 // From 2.3
 // Copy over all of the code from 2.3...
 
+class Book {
+    constructor(title, genre, author, read, startReadDate, endReadDate) {
+        this.title = title;
+        this.genre = genre;
+        this.author = author;
+        this.read = read || false;
+        this.startReadDate = startReadDate || null;
+        this.endReadDate = endReadDate || null;
+    }
+}
+
+class BookList {
+    constructor() {
+        this.booksRead = 0;
+        this.booksUnread = 0;
+        this.books = [];
+        this.lastBookRead = null;
+        this.currentlyReading = null;
+        this.upNext = null;
+    }
+
+    add = (book) => {
+        this.books.push(book);
+        if (book.read) {
+            this.booksRead += 1;
+        } else {
+            this.booksUnread += 1;
+        }
+
+
+    }
+
+    startReading = (title) => {
+        this.currentlyReading = title;
+        book.startReadDate = new Date(Date.now());
+    }
+
+    finishREading = (title) => {
+        this.lastBookRead = title;
+        book.endReadDate = new Date(Date.now());
+        book.read = true;
+        this.booksUnread -= 1;
+        this.booksRead += 1;
+    }
+
+}
+
+let homeLibrary = new BookList();
+
+homeLibrary.add(new Book("Book of Books", "Literature", "John Smith"));
+
+homeLibrary.add(new Book("About Songs", "Instructional", "John Smith"));
+
+
+console.log(homeLibrary);
+
 
 // Exercise 2.4
 // We need methods in our BookList start reading and finish reading books

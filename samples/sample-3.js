@@ -4,10 +4,10 @@ class Student {
     }
 
     learn = () => {
-        this.excitement = this.excitement  + 5;
+        this.excitement = this.excitement + 5;
     }
 
-    writeCode = () => { learn(); }
+    writeCode = () => { this.learn(); }
 }
 
 let bob = new Student();

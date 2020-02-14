@@ -1,14 +1,14 @@
 class FourSided {
     constructor(name) {
         this.numSides = 4;
-                this.name = name;
+        this.name = name;
     }
     area() {
         return this.height * this.width;
     }
 }
 
-class Square extends FourSided{
+class Square extends FourSided {
     constructor(size) {
         super("square");
         this.height = size;
